@@ -1,0 +1,8 @@
+# note: don't commit!
+PRIVATE_KEY='****************************************************************'
+ACCOUNT='******************************************'
+URL='http://localhost:8545'
+INFURA_PROJECT_ID='********************************'
+
+# populated via a script
+FLASHLOAN_CONTRACT_ADDR='******************************************'
