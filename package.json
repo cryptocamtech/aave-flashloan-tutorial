@@ -1,14 +1,11 @@
 {
-  "name": "flashloan-box",
-  "description": "A truffle box containing all you need to get started with developing flash loans",
+  "name": "Aave Flashloan Tutorial",
   "version": "1.0.0",
-  "license": "AGPLv3",
-  "author": "Aave",
-  "contributors": [
-    "David Truong <david@aave.com>"
-  ],
-  "homepage": "https://docs.aave.com/developers/tutorials/performing-a-flash-loan/...-with-truffle",
-  "repository": "https://github.com/aave/flashloan-box",
+  "description": "",
+  "author": "Crypto Cam Tech",
+  "homepage": "https://cryptocam.tech",
+  "repository": "https://github.com/cryptocamtech/aave-flashloan-tutorial",
+  "license": "ISC",
   "dependencies": {
     "web3": "^1.2.9",
     "yaeti": "^1.0.2"
