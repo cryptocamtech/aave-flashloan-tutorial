@@ -7,11 +7,9 @@ module.exports = {
 	// contracts_build_directory: path.join(__dirname, "client/src/contracts"),
 	networks: {
 	  development: {
-	    //host: "127.0.0.1",
         provider: function() { 
-            return new HDWalletProvider(process.env.PRIVATE_KEY, "http://localhost:8545");
+            return new HDWalletProvider(process.env.PRIVATE_KEY, process.env.URL);
         },
-	    //port: 8545,
 	    network_id: "*",
 	    skipDryRun: true
       }

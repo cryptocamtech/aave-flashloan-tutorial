@@ -53,7 +53,7 @@ const init = async () => {
     // should be whatever we've transferred in wei
     const balance = await daiContract.methods.balanceOf(flashLoanContractAddress).call()
         .catch(e => { throw Error('Error getting balance: ' + e.message); });
-    console.log("dai balance: " + balance);
+    console.log("dai balance: " + web3.utils.fromWei(balance, 'ether'));
     console.log("success!");
 }
 

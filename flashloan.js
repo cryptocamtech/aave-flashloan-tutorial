@@ -25,7 +25,6 @@ console.log("url: " + url);
 const web3 = new Web3(url);
 
 const daiABI = require('./ABIs/DAI.json');
-const daiAmountInWei = web3.utils.toWei("10", "ether").toString();
 const daiAddress = '0x6b175474e89094c44da98b954eedeac495271d0f';
 
 const flashLoanABI = require('./build/contracts/Flashloan.json').abi;
@@ -44,7 +43,7 @@ const init = async () => {
     const daiContract = new web3.eth.Contract(daiABI, daiAddress);
     let balance = await daiContract.methods.balanceOf(flashLoanContractAddress).call()
         .catch(e => { throw Error('Error getting balance: ' + e.message); });
-    console.log("initial dai balance: " + balance);
+    console.log("initial dai balance: " + web3.utils.fromWei(balance, 'ether'));
 
     // do the flashloan using the dai contract
     const flashContract = new web3.eth.Contract(flashLoanABI, 
@@ -60,7 +59,7 @@ const init = async () => {
     // balance in the contract will be 0.09% less due to the fee
     balance = await daiContract.methods.balanceOf(flashLoanContractAddress).call()
         .catch(e => { throw Error('Error getting balance: ' + e.message); });
-    console.log("final dai balance: " + balance);
+    console.log("final dai balance: " + web3.utils.fromWei(balance, 'ether'));
     console.log("success!");
 }
 
