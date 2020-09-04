@@ -10,11 +10,11 @@ Preparation:
     // update variables in .env as appropriate  
     npm update
     truffle compile
+    chmod a+x fork_main.sh
 ```
 
 And run:
 ```
-    chmod a+x fork_main.sh
     ./fork_main.sh 
     node sendDaiToContract.js
     node flashloan.js
