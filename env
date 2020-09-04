@@ -1,8 +1,11 @@
 # note: don't commit!
 PRIVATE_KEY='****************************************************************'
 ACCOUNT='******************************************'
+INFURA_PROJECT_ID='*************************************'
 URL='http://localhost:8545'
-INFURA_PROJECT_ID='********************************'
+
+# some holder with DAI + ETH
+DAI_BORROWER_ADRESS='0x66c57bF505A85A74609D2C83E94Aabb26d691E1F'
 
 # populated via a script
 FLASHLOAN_CONTRACT_ADDR='******************************************'

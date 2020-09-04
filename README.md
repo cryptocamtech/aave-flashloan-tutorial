@@ -8,16 +8,14 @@ Preparation:
 ```
     cp env .env  
     // update variables in .env as appropriate  
-    npm install web3  
-    npm install dotenv  
-    npm install @truffle/hdwallet-provider
-    npm install @openzeppelin/contracts
+    npm update
     truffle compile
 ```
 
 And run:
 ```
-    fork_main.sh 
+    chmod a+x fork_main.sh
+    ./fork_main.sh 
     node sendDaiToContract.js
     node flashloan.js
 ```

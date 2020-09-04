@@ -17,8 +17,9 @@
 
     getSomeEth.js
 */
+
+require('dotenv').config();
 const Web3 = require('web3');
-const dotenv = require('dotenv').config();
 
 const url = process.env.URL;
 console.log("url: " + url);

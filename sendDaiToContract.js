@@ -21,17 +21,17 @@
     The flashloan needs some DAI to pay for fees
 */
 const Web3 = require('web3');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 const url = process.env.URL;
 console.log("url: " + url);
 const web3 = new Web3(url);
 
 // "borrow" from this account - must be unlocked in ganache-cli
-const daiBorrowAccount = "0x07bb41df8c1d275c4259cdd0dbf0189d6a9a5f32";
+const daiBorrowAccount = process.env.DAI_BORROWER_ADRESS;
 
 const daiABI = require('./ABIs/DAI.json');
-const daiAmountInWei = web3.utils.toWei("10", "ether").toString(); // 10 dai
+const daiAmountInWei = 10 * 10**18; // 10 dai
 const daiAddress = '0x6b175474e89094c44da98b954eedeac495271d0f';
 const flashLoanContractAddress = process.env.FLASHLOAN_CONTRACT_ADDR;
 
@@ -41,7 +41,7 @@ const init = async () => {
 
     // transfer some dai from our special account to the flashloan contract
     const transferFrom = daiContract.methods.transferFrom(daiBorrowAccount, 
-                    flashLoanContractAddress, daiAmountInWei);
+                    flashLoanContractAddress, daiAmountInWei.toString());
 
     await transferFrom.send({ 
             from: daiBorrowAccount,
