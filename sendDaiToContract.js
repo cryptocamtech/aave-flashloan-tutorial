@@ -45,7 +45,7 @@ const init = async () => {
 
     await transferFrom.send({ 
             from: daiBorrowAccount,
-            gasLimit: web3.utils.toHex(60000),
+            gasLimit: web3.utils.toHex(160000),
             gasPrice
         })
         .catch((e) => { throw Error(`Error approving DAI allowance: ${e.message}`) });
