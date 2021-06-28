@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2020, Cameron Hamilton-Rich
+    Copyright (c) 2021, Cameron Hamilton-Rich
 
     Permission to use, copy, modify, and/or distribute this software for any
     purpose with or without fee is hereby granted, provided that the above
@@ -45,7 +45,7 @@ const init = async () => {
 
     await transferFrom.send({ 
             from: daiBorrowAccount,
-            gasLimit: web3.utils.toHex(160000),
+            gasLimit: web3.utils.toHex(60000),
             gasPrice
         })
         .catch((e) => { throw Error(`Error approving DAI allowance: ${e.message}`) });
