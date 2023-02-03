@@ -13,6 +13,6 @@
     "web3": "^1.2.11"
   },
   "devDependencies": {
-    "truffle": "^5.1.32"
+    "truffle": "^5.7.5"
   }
 }
